@@ -22,7 +22,7 @@ const getImageUrl = async (key) => {
 
 const postImageUrl = async (fileName, contentType) => {
     const command = new PutObjectCommand({
-        Bucket: 'companion99',
+        Bucket: 'companion-s3-bucket',
         Key: `news/${fileName}`,
         ContentType: contentType,
         ACL: 'public-read',
@@ -34,7 +34,7 @@ const postImageUrl = async (fileName, contentType) => {
 const changeImageUrl = async (fileName, contentType) => {
     try {
         const command = new PutObjectAclCommand({
-            Bucket: 'companion99',
+            Bucket: 'companion-s3-bucket',
             Key: `news/${fileName}`,
             ContentType: contentType,
             ACL: 'public-read',
