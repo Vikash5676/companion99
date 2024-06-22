@@ -13,7 +13,7 @@ const s3Client = new S3Client({
 
 const getImageUrl = async (key) => {
     const command = new GetObjectCommand({
-        Bucket: 'companion99',
+        Bucket: 'companion-s3-bucket',
         Key: key
     })
     const url = await getSignedUrl(s3Client, command)
