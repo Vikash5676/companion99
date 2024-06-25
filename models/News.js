@@ -16,7 +16,8 @@ const NewsSchema = new Schema({
     redirect: { type: String },
     button_text: { type: String },
     button_link: { type: String },
-    s3_url: { type: String, required: true }
+    s3_url: { type: String, required: true },
+    is_deleted: { type: Number, default: 1, required: true }
 }, {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 })

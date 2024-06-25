@@ -11,6 +11,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 const mongoUri = process.env.MONGO_URI
 
+// engine for html template
+app.set('view engine', 'ejs');
+
 // Middleware
 app.use(cors()); // Enable CORS for all routes
 app.use(cookieParser())
