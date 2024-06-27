@@ -49,7 +49,7 @@ const login = async (req, res) => {
                 const userModified = await User.findOne({ email: email });
                 // console.log(savedUser)
                 if (userModified.logged_in == 2) {
-                    sendVerificationLink(savedUser.email, savedUser['_id']);
+                    sendVerificationLink(savedUser.email, userModified['_id']);
                 }
                 return res.status(200).json({ message: 'successfully', data: userModified, status_code: 200 })
             } else {
