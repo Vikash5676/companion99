@@ -4,6 +4,7 @@ const dbConnection = require('./utils/db');
 const newsRoute = require('./routes/newsRoute');
 const googleRoute = require('./routes/googleLoginRoute');
 const cookieParser = require('cookie-parser');
+const userRoute = require('./routes/userRoute');
 require('dotenv').config()
 
 
@@ -21,6 +22,7 @@ app.use(express.json()); // Parse JSON bodies
 
 // Routes
 app.use('/admin', newsRoute, googleRoute)
+app.use('/user', newsRoute, userRoute)
 
 // MongoDB Connection
 const dbConnect = dbConnection(mongoUri)

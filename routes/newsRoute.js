@@ -1,7 +1,7 @@
 const express = require('express');
 const User = require('../models/UserModel');
 const { addNews, getNews, getImageUrlNew, getParticularNews, editNews, deleteNews } = require('../controllers/NewsController');
-const authMiddleware = require('../middlewares/AuthMiddleware');
+const authMiddleware = require('../middlewares/AdminAuthMiddleware');
 
 
 const newsRoute = express.Router();
